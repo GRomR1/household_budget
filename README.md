@@ -12,22 +12,23 @@ Russian description of it available in [README.txt](README.txt).
 
 ### Configure database access
 
-The project uses MySQL database. With [freesqldatabase.com](http://www.freesqldatabase.com/) was run some testbed. If you want to use your local DB instance or SQLite database, you should find in [settings.py](household_budget/settings.py) file next strings:
+The project uses MySQL database. Tests and deployment it will become easy with [PythonAnywhere](https://pythonanywhere.com) service. 
+View [official](https://help.pythonanywhere.com/pages/) docs about these processes for addition information.
+If you want to use your local DB instance or SQLite database, you should find in [settings.py](household_budget/settings.py) file next strings:
 
 ```
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sql11191715',
-        'USER': 'sql11191715',
-        'PASSWORD': 'vrViyJBnH6',
-        'HOST': 'sql11.freesqldatabase.com',
-        'PORT': '3306',
+        'NAME': 'GRomR1$household_budget',
+        'USER': 'GRomR1',
+        'PASSWORD': 'passw0rd',
+        'HOST': 'GRomR1.mysql.pythonanywhere-services.com'
     }
 }
 ```
 
-Edit this to correct config data about host, user and etc. Or use SQLite:
+Edit this to correct config data about your host, username and etc. Or use SQLite:
 
 ```
 DATABASES = {

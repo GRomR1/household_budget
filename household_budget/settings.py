@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'tqb*_$b0n=wtzm1omd4pl4byuffqb57x2*ks9wyz9w7v9pri1+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -87,11 +87,10 @@ WSGI_APPLICATION = 'household_budget.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sql11191715',
-        'USER': 'sql11191715',
-        'PASSWORD': 'vrViyJBnH6',
-        'HOST': 'sql11.freesqldatabase.com',
-        'PORT': '3306',
+        'NAME': 'GRomR1$household_budget',
+        'USER': 'GRomR1',
+        'PASSWORD': 'passw0rd',
+        'HOST': 'GRomR1.mysql.pythonanywhere-services.com'
     }
 }
 
@@ -132,9 +131,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+# ]
 
 LOGIN_REDIRECT_URL = 'home'
