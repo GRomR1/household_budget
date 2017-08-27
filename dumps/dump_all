@@ -1,0 +1,307 @@
+- model: household_budget.kind
+  pk: 1
+  fields: {name: "\u0420\u0430\u0441\u0445\u043E\u0434"}
+- model: household_budget.kind
+  pk: 2
+  fields: {name: "\u0414\u043E\u0445\u043E\u0434"}
+- model: household_budget.item
+  pk: 1
+  fields: {name: "\u0417\u0430\u0440\u043F\u043B\u0430\u0442\u0430 \u043C\u0430\u043C\
+      \u044B", plan: 30000, closing_date: null, kind: 2}
+- model: household_budget.item
+  pk: 2
+  fields: {name: "\u0417\u0430\u0440\u043F\u043B\u0430\u0442\u0430 \u043F\u0430\u043F\
+      \u044B", plan: 15000, closing_date: null, kind: 2}
+- model: household_budget.item
+  pk: 3
+  fields: {name: "\u041E\u043F\u043B\u0430\u0442\u0430 \u0416\u041A\u0425", plan: 5000,
+    closing_date: null, kind: 1}
+- model: household_budget.item
+  pk: 4
+  fields: {name: "\u041F\u0435\u043D\u0441\u0438\u044F \u0431\u0430\u0431\u0443\u0448\
+      \u043A\u0438", plan: 8000, closing_date: null, kind: 2}
+- model: household_budget.item
+  pk: 5
+  fields: {name: "\u0421\u0442\u0438\u043F\u0435\u043D\u0434\u0438\u044F \u0434\u043E\
+      \u0447\u0435\u0440\u0438", plan: 10000, closing_date: null, kind: 2}
+- model: household_budget.item
+  pk: 6
+  fields: {name: "\u0421\u0442\u0430\u0436\u0438\u0440\u043E\u0432\u043A\u0430 \u0441\
+      \u044B\u043D\u0430", plan: 10000, closing_date: 2017-08-31, kind: 2}
+- model: household_budget.item
+  pk: 7
+  fields: {name: "\u041F\u0440\u043E\u0446\u0435\u043D\u0442\u044B \u043F\u043E \u0432\
+      \u043A\u043B\u0430\u0434\u0443 \u0432 \u0431\u0430\u043D\u043A\u0435", plan: 5000,
+    closing_date: 2017-12-30, kind: 2}
+- model: household_budget.item
+  pk: 8
+  fields: {name: "\u041F\u0435\u043D\u0441\u0438\u044F \u043F\u0430\u043F\u044B \u043F\
+      \u043E \u0438\u043D\u0432\u0430\u043B\u0438\u0434\u043D\u043E\u0441\u0442\u0438",
+    plan: 10000, closing_date: null, kind: 2}
+- model: household_budget.item
+  pk: 9
+  fields: {name: "\u041A\u0440\u0435\u0434\u0438\u0442 iPhone 7 \u0434\u043E\u0447\
+      \u0435\u0440\u0438", plan: 2000, closing_date: 2018-12-31, kind: 1}
+- model: household_budget.item
+  pk: 10
+  fields: {name: "\u041A\u0440\u0435\u0434\u0438\u0442 XBox \u0441\u044B\u043D\u0430",
+    plan: 5000, closing_date: 2017-07-31, kind: 1}
+- model: household_budget.item
+  pk: 11
+  fields: {name: "\u041F\u0440\u043E\u0434\u0443\u043A\u0442\u044B \u043F\u0438\u0442\
+      \u0430\u043D\u0438\u044F \u0434\u043E\u043C\u043E\u0439", plan: 15000, closing_date: null,
+    kind: 1}
+- model: household_budget.estimate
+  pk: 1
+  fields: {date: !!timestamp '2017-08-01 09:33:00+00:00', value: 30000, item: 1}
+- model: household_budget.estimate
+  pk: 2
+  fields: {date: !!timestamp '2017-08-10 09:33:00+00:00', value: 5000, item: 3}
+- model: household_budget.estimate
+  pk: 3
+  fields: {date: !!timestamp '2017-08-04 07:00:00+00:00', value: 15500, item: 2}
+- model: household_budget.estimate
+  pk: 4
+  fields: {date: !!timestamp '2017-08-06 05:00:00+00:00', value: 2000, item: 9}
+- model: household_budget.estimate
+  pk: 5
+  fields: {date: !!timestamp '2017-08-15 09:12:00+00:00', value: 8000, item: 4}
+- model: household_budget.estimate
+  pk: 6
+  fields: {date: !!timestamp '2017-08-16 11:00:00+00:00', value: 10000, item: 5}
+- model: household_budget.estimate
+  pk: 7
+  fields: {date: !!timestamp '2017-08-25 11:00:00+00:00', value: 11000, item: 6}
+- model: household_budget.estimate
+  pk: 8
+  fields: {date: !!timestamp '2017-08-10 09:16:00+00:00', value: 5000, item: 11}
+- model: household_budget.estimate
+  pk: 9
+  fields: {date: !!timestamp '2017-08-31 09:16:00+00:00', value: 10000, item: 11}
+- model: contenttypes.contenttype
+  pk: 1
+  fields: {app_label: household_budget, model: estimate}
+- model: contenttypes.contenttype
+  pk: 2
+  fields: {app_label: household_budget, model: item}
+- model: contenttypes.contenttype
+  pk: 3
+  fields: {app_label: household_budget, model: kind}
+- model: contenttypes.contenttype
+  pk: 4
+  fields: {app_label: admin, model: logentry}
+- model: contenttypes.contenttype
+  pk: 5
+  fields: {app_label: auth, model: permission}
+- model: contenttypes.contenttype
+  pk: 6
+  fields: {app_label: auth, model: group}
+- model: contenttypes.contenttype
+  pk: 7
+  fields: {app_label: auth, model: user}
+- model: contenttypes.contenttype
+  pk: 8
+  fields: {app_label: contenttypes, model: contenttype}
+- model: contenttypes.contenttype
+  pk: 9
+  fields: {app_label: sessions, model: session}
+- model: sessions.session
+  pk: ohl8xq2ae8j8mzw40i0k065bbldu8zen
+  fields: {session_data: Njc1NmE4NmRiNTQ1YjYxZDk2YzVhNDZkMGM2NzE5NzQ3YWI1MDY5Njp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0ZTJhZDUyNGM5NjNhZGMxYjIzOThlYWE1ZWRlZjZkZWZkMWJlZmJlIn0=,
+    expire_date: !!timestamp '2017-09-10 10:45:56+00:00'}
+- model: auth.permission
+  pk: 1
+  fields: {name: Can add estimate, content_type: 1, codename: add_estimate}
+- model: auth.permission
+  pk: 2
+  fields: {name: Can change estimate, content_type: 1, codename: change_estimate}
+- model: auth.permission
+  pk: 3
+  fields: {name: Can delete estimate, content_type: 1, codename: delete_estimate}
+- model: auth.permission
+  pk: 4
+  fields: {name: Can add item, content_type: 2, codename: add_item}
+- model: auth.permission
+  pk: 5
+  fields: {name: Can change item, content_type: 2, codename: change_item}
+- model: auth.permission
+  pk: 6
+  fields: {name: Can delete item, content_type: 2, codename: delete_item}
+- model: auth.permission
+  pk: 7
+  fields: {name: Can add kind, content_type: 3, codename: add_kind}
+- model: auth.permission
+  pk: 8
+  fields: {name: Can change kind, content_type: 3, codename: change_kind}
+- model: auth.permission
+  pk: 9
+  fields: {name: Can delete kind, content_type: 3, codename: delete_kind}
+- model: auth.permission
+  pk: 10
+  fields: {name: Can add log entry, content_type: 4, codename: add_logentry}
+- model: auth.permission
+  pk: 11
+  fields: {name: Can change log entry, content_type: 4, codename: change_logentry}
+- model: auth.permission
+  pk: 12
+  fields: {name: Can delete log entry, content_type: 4, codename: delete_logentry}
+- model: auth.permission
+  pk: 13
+  fields: {name: Can add permission, content_type: 5, codename: add_permission}
+- model: auth.permission
+  pk: 14
+  fields: {name: Can change permission, content_type: 5, codename: change_permission}
+- model: auth.permission
+  pk: 15
+  fields: {name: Can delete permission, content_type: 5, codename: delete_permission}
+- model: auth.permission
+  pk: 16
+  fields: {name: Can add group, content_type: 6, codename: add_group}
+- model: auth.permission
+  pk: 17
+  fields: {name: Can change group, content_type: 6, codename: change_group}
+- model: auth.permission
+  pk: 18
+  fields: {name: Can delete group, content_type: 6, codename: delete_group}
+- model: auth.permission
+  pk: 19
+  fields: {name: Can add user, content_type: 7, codename: add_user}
+- model: auth.permission
+  pk: 20
+  fields: {name: Can change user, content_type: 7, codename: change_user}
+- model: auth.permission
+  pk: 21
+  fields: {name: Can delete user, content_type: 7, codename: delete_user}
+- model: auth.permission
+  pk: 22
+  fields: {name: Can add content type, content_type: 8, codename: add_contenttype}
+- model: auth.permission
+  pk: 23
+  fields: {name: Can change content type, content_type: 8, codename: change_contenttype}
+- model: auth.permission
+  pk: 24
+  fields: {name: Can delete content type, content_type: 8, codename: delete_contenttype}
+- model: auth.permission
+  pk: 25
+  fields: {name: Can add session, content_type: 9, codename: add_session}
+- model: auth.permission
+  pk: 26
+  fields: {name: Can change session, content_type: 9, codename: change_session}
+- model: auth.permission
+  pk: 27
+  fields: {name: Can delete session, content_type: 9, codename: delete_session}
+- model: auth.user
+  pk: 1
+  fields:
+    password: pbkdf2_sha256$36000$U2mNdgEOjFB1$YesqlLNrfPXKInsntA4ns7T1hfcYhs50zS/9kV+FOpw=
+    last_login: 2017-08-26 08:38:52+00:00
+    is_superuser: true
+    username: admin
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: true
+    is_active: true
+    date_joined: 2017-08-26 08:38:21+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 2
+  fields:
+    password: pbkdf2_sha256$36000$BJ9RPWsQs462$g795zqmg81DZ6NEOJTnFGb7IveR9bnwMU4or7sT3m0A=
+    last_login: 2017-08-27 10:45:56+00:00
+    is_superuser: false
+    username: "\u041C\u0430\u043C\u0430"
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: false
+    is_active: true
+    date_joined: 2017-08-26 08:40:01+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 3
+  fields:
+    password: pbkdf2_sha256$36000$6wxGYD7El2k7$ddgLmQSQkfR0iMUEfoyT6N0mlrQBNoe+Epkz2FJjAfk=
+    last_login: null
+    is_superuser: false
+    username: "\u041F\u0430\u043F\u0430"
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: false
+    is_active: true
+    date_joined: 2017-08-26 08:41:45+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 4
+  fields:
+    password: pbkdf2_sha256$36000$TagQXabm7L0r$lpljvLwjlCm/7kGPQWAvf3apvqYX6PIEEXs7Yqk24J8=
+    last_login: null
+    is_superuser: false
+    username: "\u0411\u0430\u0431\u0443\u0448\u043A\u0430"
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: false
+    is_active: true
+    date_joined: 2017-08-26 08:42:27+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 5
+  fields:
+    password: pbkdf2_sha256$36000$awvF5Xzx7mjD$mgX6rkSYsxhZcrVKz3ZeoQmGAknByR5fp6krxbf7oeg=
+    last_login: null
+    is_superuser: false
+    username: "\u0421\u044B\u043D"
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: false
+    is_active: true
+    date_joined: 2017-08-26 08:42:54+00:00
+    groups: []
+    user_permissions: []
+- model: auth.user
+  pk: 6
+  fields:
+    password: pbkdf2_sha256$36000$S0ZKYB7pSKe9$UHZgzjRBT4ilyEMFC1vcCKbTc/XfN7vw9qg4ssI2bcI=
+    last_login: null
+    is_superuser: false
+    username: "\u0414\u043E\u0447\u044C"
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: false
+    is_active: true
+    date_joined: 2017-08-26 08:43:21+00:00
+    groups: []
+    user_permissions: []
+- model: admin.logentry
+  pk: 1
+  fields: {action_time: !!timestamp '2017-08-26 08:40:01+00:00', user: 1, content_type: 7,
+    object_id: '2', object_repr: "\u041C\u0430\u043C\u0430", action_flag: 1, change_message: '[{"added":
+      {}}]'}
+- model: admin.logentry
+  pk: 2
+  fields: {action_time: !!timestamp '2017-08-26 08:41:46+00:00', user: 1, content_type: 7,
+    object_id: '3', object_repr: "\u041F\u0430\u043F\u0430", action_flag: 1, change_message: '[{"added":
+      {}}]'}
+- model: admin.logentry
+  pk: 3
+  fields: {action_time: !!timestamp '2017-08-26 08:42:27+00:00', user: 1, content_type: 7,
+    object_id: '4', object_repr: "\u0411\u0430\u0431\u0443\u0448\u043A\u0430", action_flag: 1,
+    change_message: '[{"added": {}}]'}
+- model: admin.logentry
+  pk: 4
+  fields: {action_time: !!timestamp '2017-08-26 08:42:54+00:00', user: 1, content_type: 7,
+    object_id: '5', object_repr: "\u0421\u044B\u043D", action_flag: 1, change_message: '[{"added":
+      {}}]'}
+- model: admin.logentry
+  pk: 5
+  fields: {action_time: !!timestamp '2017-08-26 08:43:21+00:00', user: 1, content_type: 7,
+    object_id: '6', object_repr: "\u0414\u043E\u0447\u044C", action_flag: 1, change_message: '[{"added":
+      {}}]'}

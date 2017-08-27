@@ -1,0 +1,6 @@
+- model: household_budget.kind
+  pk: 1
+  fields: {name: "\u0420\u0430\u0441\u0445\u043E\u0434"}
+- model: household_budget.kind
+  pk: 2
+  fields: {name: "\u0414\u043E\u0445\u043E\u0434"}

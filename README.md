@@ -45,19 +45,27 @@ DATABASES = {
 
     git clone https://github.com/GRomR1/household_budget.git
 
-### 2. Run migrations:
+### 2. Tell Django that you’ve new models:
+
+    python manage.py makemigrations
+	
+### 3. Run migrations:
 
     python manage.py migrate
+	
+### 4. Load minimal data:
 
-### 3. Create a user:
+    python manage.py loaddata dump\dump_min
+
+### 5. Create a user:
 
     python manage.py createsuperuser
 
-### 4. Run the server:
+### 6. Run the server:
 
     python manage.py runserver
 
-### 5. And open [127.0.0.1:8000](http://127.0.0.1:8000) in your web browser.
+### 7. And open [127.0.0.1:8000](http://127.0.0.1:8000) in your web browser.
 
 ## License
 
