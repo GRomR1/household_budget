@@ -1,16 +1,16 @@
 from django.shortcuts import get_object_or_404, get_list_or_404, render
-from django.http import HttpResponseRedirect, HttpResponse, Http404, JsonResponse
+from django.http import HttpResponseRedirect, Http404, JsonResponse
 from django.views import generic
 from django.utils import timezone
-from datetime import datetime, date, time
-from dateutil.tz import tzutc, tzlocal
+# from datetime import datetime, date, time
+# from dateutil.tz import tzutc, tzlocal
 import pytz
-import json
+# import json
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.translation import ugettext_lazy as _
-from django import forms 
-from django.forms import ModelForm, DateField, SelectDateWidget
-from django.contrib.auth import authenticate
+from django import forms
+from django.forms import ModelForm
+# from django.contrib.auth import authenticate
 from django.db.models import Q
 
 from .models import  Kind, Estimate, Item
