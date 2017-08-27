@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Семейный бюджет{% endblock %}
+
+{% block content %}
+<form action="{% url 'report_result' %}" method='get'>
+    <div class="container">
+        <div class='col-md-4'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker6'>
+                    <input id="start_date" name="start_date" type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class='col-md-4'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker7'>
+                    <input id="end_date" name="end_date" type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class='col-md-4'>
+            {# <input id="show" type="button" class="btn btn-primary" value="Показать" />  for AJAX response - don't know why isn't work now TODO fixit if it need #}
+            <button type="submit" class="btn btn-primary">Показать</button>
+        </div>
+    </div>
+</form>
+{% endblock %}
+

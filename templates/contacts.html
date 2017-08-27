@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% block title %}Информация о системе{% endblock %}
+
+{% block css_content %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'contact.css' %}" />
+{% endblock %}   
+
+
+{% if user.is_authenticated %}  
+   {% block content %}
+   <h2 align="center">Система для ведения и учета семейного бюджета - надежный помощник для эффективного управления бюджетом семьи.</h2>
+   {% endblock %}
+{% else %}
+  {% block logged_out %} 
+   <h2 align="center">Система для ведения и учета семейного бюджета - надежный помощник для эффективного управления бюджетом семьи.</h2>
+  {% endblock %}
+{% endif %}
+  
+{% block contacts %}
+<div class="profile small _1Shwh4cyiKJFCDSgKBR_WT" data-reactid="18" style="padding-top: 0px;">
+   <style data-reactid="19">body {background-color: #4A4A4A;background: -webkit-linear-gradient(315deg, #4A4A4A 0%, #4A4A4A 30%, #7e7e7e 100%) fixed;background: linear-gradient(135deg, #4A4A4A 0%, #4A4A4A 30%, #7e7e7e 100%) fixed;}</style>
+   <div class="profile-content" data-reactid="20">
+      <div class="head" data-reactid="21">
+         <div class="image" style="width:120px;height:120px;background-image:url({% static 'ruslan.gainanov.jpg' %});background-size:cover;border-radius:50%;background-repeat:no-repeat;background-position:center center;" data-reactid="22"></div>
+         <div class="name-headline" data-reactid="23">
+            <section data-reactid="24">
+               <h4 align="center">Developed by:</h4>
+               <h1 class="name" data-reactid="25">Ruslan Gainanov</h1>
+            </section>
+            <section data-reactid="26">
+               <h2 class="headline" data-reactid="27">
+                  <span class="roles" data-reactid="28"><span class="role" data-reactid="29">Software Engineer</span></span><!-- react-text: 30 --> <!-- /react-text -->
+                  <span class="location" data-reactid="31">
+                     <!-- react-text: 32 -->in <!-- /react-text --><span class="location" data-reactid="33">Пермь, Россия</span>
+                  </span>
+               </h2>
+            </section>
+         </div>
+      </div>
+      <div class="body" data-reactid="34">
+         <!-- react-empty: 35 -->
+         <section class="spotlight" data-reactid="36"><a href="http://gromr1.blogspot.ru/" target="_blank" rel="noopener noreferrer" class="spotlight button large dark" style="background-color:#4A4A4A;color:#fff;font-weight:bold;" data-reactid="37">Visit my website</a></section>
+         <section class="bio" data-reactid="38">
+            <div data-reactid="39">
+               <p>Выпускник каф. ИТАС ПНИПУ 2017 года. Профессиональный программист. Занимаюсь разработкой настольных и мобильных приложений, веб-систем, сайтов, порталов, администрированием ОС Linux.</p>
+            </div>
+         </section>
+         <section class="interests" data-reactid="40">
+            <ul class="inline" data-reactid="41">
+               <li class="interest" data-reactid="42">
+                  <!-- react-empty: 43 -->
+                  <a href="#" target="_blank" rel="noopener noreferrer" data-reactid="44">
+                     <!-- react-text: 45 -->#<!-- /react-text --><!-- react-text: 46 -->technology<!-- /react-text -->
+                  </a>
+               </li>
+               <li class="interest" data-reactid="47">
+                  <!-- react-empty: 48 -->
+                  <a href="#" target="_blank" rel="noopener noreferrer" data-reactid="49">
+                     <!-- react-text: 50 -->#<!-- /react-text --><!-- react-text: 51 -->diy<!-- /react-text -->
+                  </a>
+               </li>
+               <li class="interest" data-reactid="52">
+                  <!-- react-empty: 53 -->
+                  <a href="#" target="_blank" rel="noopener noreferrer" data-reactid="54">
+                     <!-- react-text: 55 -->#<!-- /react-text --><!-- react-text: 56 -->programming<!-- /react-text -->
+                  </a>
+               </li>
+               <li class="interest" data-reactid="57">
+                  <!-- react-empty: 58 -->
+                  <a href="#" target="_blank" rel="noopener noreferrer" data-reactid="59">
+                     <!-- react-text: 60 -->#<!-- /react-text --><!-- react-text: 61 -->webdevelopment<!-- /react-text -->
+                  </a>
+               </li>
+               <li class="interest" data-reactid="62">
+                  <!-- react-empty: 63 -->
+                  <a href="#" target="_blank" rel="noopener noreferrer" data-reactid="64">
+                     <!-- react-text: 65 -->#<!-- /react-text --><!-- react-text: 66 -->running<!-- /react-text -->
+                  </a>
+               </li>
+            </ul>
+         </section>
+         <!-- react-empty: 67 -->
+         <section class="social-links" data-reactid="68">
+            <ul class="inline" data-reactid="69">
+               <li class="contact-me" title="Send me a message" data-reactid="70">
+                  <a class="contact-me" title="Send me a message" href="mailto:ruslan.r.gainanov@gmail.com" rel="noopener noreferrer" data-reactid="70">
+                  <span class="SVGInline" data-reactid="71">
+                     <svg class="SVGInline-svg" viewBox="0 2 37 30" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.9864841,17.7442683 L35.9560572,4.24918119 C35.9560572,2.99963608 34.9577476,2 33.7098606,2 L2.26310764,2 C1.01522062,2 0.0169109976,2.99963608 0.0169109976,4.24918119 L17.9864841,17.7442683 Z M17.9864841,21.7844641 L0.0169109976,8.28937702 L0.0777647581,29.7508188 C0.0777647581,31.0003639 1.07607438,32 2.3239614,32 L33.7707144,32 C35.0186014,32 36.016911,31.0003639 36.016911,29.7508188 L35.9560572,8.28937702 L17.9864841,21.7844641 Z"></path>
+                     </svg>
+                  </span>
+                  </a>
+               </li>
+               <li data-reactid="72">
+                  <a class="social-link" title="Visit me on VK" href="https://vk.com/grr77" target="_blank" rel="noopener noreferrer" data-reactid="73">
+                     <span class="SVGInline" data-reactid="74">
+                        <svg class="SVGInline-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+                           <path d="M1000 500c0 276-224 500-500 500s-500-224-500-500 224-500 500-500 500 224 500 500zm-299 38c0-14 17-36 58-89 38-49 55-85 55-99 0-12-11-17-27-17h-114c-12 0-19 6-22 14-14 36-29 66-46 92-30 51-50 68-60 68-7 0-18-6-18-43 0-41 2-85 2-102 0-36-10-49-88-49s-87 24-87 29 14-1 27 13c12 11 16 27 16 87 0 25-3 67-22 67-13 0-32-21-68-81-25-44-35-78-42-86-6-5-12-9-24-9h-90c-19 0-26 7-26 16 0 4 2 10 4 15 41 91 107 211 170 273 46 45 110 71 162 71h38c17 0 29-5 29-29 1-38 14-62 28-62 17 0 34 20 59 49 21 25 45 43 74 43h94c11 0 30-7 30-24s-10-33-54-77c-41-41-58-56-58-70z"></path>
+                        </svg>
+                     </span>
+                  </a>
+               </li>
+               <li data-reactid="75">
+                  <a class="social-link" title="Visit me on GitHub" href="https://github.com/RuslanGainanov" target="_blank" rel="noopener noreferrer" data-reactid="76">
+                     <span class="SVGInline" data-reactid="77">
+                        <svg class="SVGInline-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+                           <path d="M1000 508c0 232-160 429-375 485v-131c0-41-10-98-52-131 134-20 239-99 239-223 0-51-21-102-58-144 11-47 17-105-4-148-53 5-106 32-145 56-33-8-67-14-105-14s-73 6-106 14c-39-24-91-51-144-56-21 43-16 101-5 148-37 42-57 93-57 144 0 124 105 203 239 223-20 15-32 36-40 57-105 2-189-81-190-81-5-4-12-5-16-2-6 3-9 10-7 16 2 5 44 124 201 172v100c-215-56-375-253-375-485 0-275 223-500 500-500 275 0 500 225 500 500z"></path>
+                        </svg>
+                     </span>
+                  </a>
+               </li>
+               <li data-reactid="78">
+                  <a class="social-link" title="Visit me on Blogger" href="http://gromr1.blogspot.com/" target="_blank" rel="noopener noreferrer" data-reactid="79">
+                     <span class="SVGInline" data-reactid="80">
+                        <svg class="SVGInline-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+                           <path d="M1000 500c0 277-223 500-500 500s-500-223-500-500 223-500 500-500 500 223 500 500zm-208-21c0-23-19-42-42-42h-31c-18 0-31-18-31-41 0-103-85-188-188-188h-104c-104 0-188 85-188 188v208c0 104 83 187 188 187h208c103 0 188-83 188-187v-125zm-438-83c0-23 19-42 42-42h104c23 0 42 19 42 42s-19 42-42 42h-104c-23 0-42-19-42-42zm292 208c0 23-19 42-42 42h-208c-23 0-42-19-42-42s19-42 42-42h208c23 0 42 19 42 42z"></path>
+                        </svg>
+                     </span>
+                  </a>
+               </li>
+               <li data-reactid="81">
+                  <a class="social-link" title="Visit me on LinkedIn" href="https://www.linkedin.com/in/руслан-гайнанов-56a8b9148/" target="_blank" rel="noopener noreferrer" data-reactid="82">
+                     <span class="SVGInline" data-reactid="83">
+                        <svg class="SVGInline-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+                           <path d="M1000 500c0 277-223 500-500 500s-500-223-500-500 223-500 500-500 500 223 500 500zm-625-240c-1-41-32-73-83-73-50 0-83 32-83 73s32 73 82 73h1c51 0 83-32 83-73zm-21 136h-125v354h125v-354zm458 166c0-114-56-187-146-187-50 0-87 30-104 75l-4-54h-124c1 13 3 83 3 83v271h125v-188c0-50 23-83 62-83 38 0 63 20 63 83v188h125v-188z"></path>
+                        </svg>
+                     </span>
+                  </a>
+               </li>
+            </ul>
+         </section>
+      </div>
+   </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

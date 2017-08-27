@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Семейный бюджет{% endblock %}
+
+{% block content %}
+    <h1>Здравствуйте, {{ user.username }}!</h1>
+    <h2>Вас приветствует система ведения семейного бюджета!</h2>
+    <p>Благодаря мне Вы можете следить за бюджетом Вашей семьи, а также планировать доходы и расходы.</p>
+    <p><br /></p>
+    <p>Уже сейчас доступны следующие функции:</p>
+    <ul>
+        <a class="btn btn-link btn-lg" href="{% url 'report' %}" role="button">Сформировать отчет &raquo;</a><br />
+        <a class="btn btn-link btn-lg" href="{% url 'report_result' %}" role="button">Добавить новый доход/расход &raquo;</a><br />
+        <a class="btn btn-link btn-lg" href="{% url 'incomes' %}" role="button">Посмотреть справочник доходов &raquo;</a><br />
+        <a class="btn btn-link btn-lg" href="{% url 'outlays' %}" role="button">Посмотреть справочник расходов &raquo;</a><br />
+        <a class="btn btn-link btn-lg" href="{% url 'new_article' %}" role="button">Добавить новую статью &raquo;</a><br />
+    </ul>
+{% endblock %}

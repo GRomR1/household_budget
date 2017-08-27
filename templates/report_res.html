@@ -1,0 +1,85 @@
+{% extends 'report.html' %}
+
+{% block title %}Сводный отчет{% endblock %}
+
+
+{% block table_data %}
+
+{% if ds and de %}
+<h2>Сводный отчет за период с "<span id="start_date_new">{{ ds }}</span>" по "<span id="end_date_new">{{ de }}</span>":</h2>
+{% else %}
+<div class="alert alert-info alert-dismissable">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  Если вы желаете получить значения за определенный период времени - просто укажите его выше.
+</div>
+<h2>Сводный отчет за все время:</h2>
+{% endif %}
+
+{% if not estimate_list %}
+<div class="alert alert-warning alert-dismissable">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>Внимание!</strong> Значений за выбранный период не найдено.
+</div>
+{% endif %}
+
+<table id="report_table" class="table table-hover">
+  <thead>
+    <tr>
+      <th>Дата</th>
+      <th>Тип</th>
+      <th>Название</th>
+      <th>План, руб.</th>
+      <th>Факт, руб.</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for e in estimate_list %}
+        {% if e.item.kind.name == "Доход" %}
+        <tr class="success" id="tr_{{ e.id }}">
+        {% else %}
+        <tr class="danger" id="tr_{{ e.id }}">
+        {% endif %}
+          <td>{{ e.date|date:"d.m.Y H:i" }}</td> 
+          <td>{{ e.item.kind.name }}</td>
+          <td>{{ e.item.name }}</td>
+          <td>{{ e.item.plan }}</td>
+          <td>{{ e.value }}</td>
+          <td><button id="remove_{{ e.id }}" class="btn btn-danger" data-value="{{ e.id }}" onclick="onDelete(this)"><span class="glyphicon glyphicon-remove"></span></button></td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td>
+            <div class="form-group" >
+                <div class='input-group date' id='datetimepicker_new_date'>
+                    <input id="new_date" type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </td>
+        <td>
+            <select id="new_kind" class="form-control" onchange="onChange(this)">
+              <option value="default"></option>
+            {% for k in kind_list %}
+              <option value="{{ k.id }}">{{ k.name }}</option>
+            {% endfor %}
+            </select>
+        </td>
+        <td>
+            <select id="new_item" class="form-control" onchange="onChangeItem(this)">
+            </select>
+        </td>
+        <td>
+            <span id="new_plan"/>
+        </td>
+        <td>
+            <input type="text" id="new_value" class="form-control"/>
+        </td>
+        <td><button id="add_record" class="btn btn-success" onclick="onAdd(this)"><span class="glyphicon glyphicon-plus"></span></button></td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}

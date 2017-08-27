@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Справочник статей{% endblock %}
+
+{% block content %}
+    <h2>Справочник статей 
+            {% if articles_list.first.kind.name == 'Доход' %}
+                доходов
+            {% else %}
+                расходов        
+            {% endif %}</h2>
+{% endblock %}
+
+
+{% block table_data %}
+<table id="report_table" class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Название статьи</th>
+      <th>План, руб.</th>
+      <th>Дата закрытия</th>
+      <th>Закрыть?</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for a in articles_list|dictsort:'id' %}
+    <tr id="tr_{{ a.id }}">
+        <td>{{ forloop.counter }}</td>
+        <td>{{ a.name }}</td>
+        <td>{{ a.plan }}</td>
+        {% if a.closing_date != None %}
+            <td id="td_input_{{ a.id }}"><input type='text' class="form-control" disabled="disabled" value="{{ a.closing_date|date:"d.m.Y" }}" /></td> 
+            <td id="td_button_{{ a.id }}">Закрыта</td>
+        {% else %}
+            <td id="td_input_{{ a.id }}">
+                <div class="form-group" >
+                    <div class='input-group date' id='datetimepicker_close_date_{{ a.id }}'>
+                        <input id="input_datetimepicker_close_date_{{ a.id }}" type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </td>
+            <td id="td_button_{{ a.id }}"><button id="close_{{ a.id }}" class="btn btn-danger" data-value="{{ a.id }}" onclick="onClose(this)"><span class="glyphicon glyphicon-remove"></span></button></td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

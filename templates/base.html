@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  {% block css_content %}{% endblock %} 
+  {% load static %}
+  {# Load the tag library #}
+  {% load bootstrap3 %}
+  {# Load CSS and JavaScript #}
+  {% bootstrap_css %}
+  {% bootstrap_javascript jquery=1 %}
+  {# Display django.contrib.messages as Bootstrap alerts #}
+  {% bootstrap_messages %}
+
+  
+  <link rel="stylesheet" type="text/css" href="{% static 'jumbotron.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-datetimepicker.min.css' %}" />
+  {# <script type="text/javascript" src="{% static 'jquery-3.2.1.min.js' %}"></script> #}
+  <script type="text/javascript" src="{% static 'moment-with-locales.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'bootstrap-datetimepicker.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'script.js' %}"></script>
+  <title>{% block title %}Семейный бюджет{% endblock %}</title>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Семейный бюджет</a>
+      </div>
+
+      <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/">Домой</a></li>
+        <li><a href="{% url 'report' %}">Отчет</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Справочник статей <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'incomes' %}">Доходы</a></li>
+            <li><a href="{% url 'outlays' %}">Расходы</a></li>
+            <li role="separator" class="divider"></li>
+            {# <li class="dropdown-header">Nav header</li> #}
+            <li><a href="{% url 'new_article' %}">Добавить статью</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'contacts' %}">Информация</a></li>
+      </ul>
+      {% if user.is_authenticated %}
+          <div class="navbar-form navbar-right">
+            <span class="label label-info" style="font-size: 15px;">Привет, <b>{{ user.username }}</b>!</span>&nbsp;
+            <input type="hidden" name="next" value="{% url 'home' %}" />
+            <a href="{% url 'logout' %}" class="btn btn-primary">Выйти</a> 
+          </div>
+      {% else %}
+        <form action="{% url 'login' %}" method='post' class="navbar-form navbar-right">
+          {% csrf_token %}
+          <div class="form-group">
+            <input type="text" placeholder="Имя" name="username" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="password" name="password" placeholder="Пароль" class="form-control">
+          </div>
+          <input type="hidden" name="next" value="{% url 'home' %}" />
+          <button type="submit" class="btn btn-success" value="login">Войти</button>
+        </form>
+      {% endif %}
+      </div>
+    </div>
+  </nav>
+
+
+
+  {% if user.is_authenticated %}   
+    <div class="jumbotron">
+      <div class="container">      
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+    <div class="container">
+      {% block table_data %}{% endblock %}
+    </div>
+    {% block javascript %}{% endblock %}
+  {% else %}
+    <div class="jumbotron">
+      <div class="container">
+        {% block logged_out %} 
+        <h1>Доступ закрыт.</h1>
+        <p>Авторизуйтесь в системе, пожалуйста.</p>
+        {% endblock %}
+      </div>
+    </div>
+  {% endif %}
+
+    <div class="container">
+      {% block contacts %}{% endblock %}
+    </div>
+</body>
+</html>
