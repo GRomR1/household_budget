@@ -41,31 +41,35 @@ DATABASES = {
 
 ## How do I run this project locally?
 
-### 1. Clone the repository:
+### 1. Install required packets:
+
+	pip install -r requirements.txt
+
+### 2. Clone the repository:
 
     git clone https://github.com/GRomR1/household_budget.git
 
-### 2. Tell Django that you’ve new models:
+### 3. Tell Django that you’ve new models:
 
     python manage.py makemigrations
 	
-### 3. Run migrations:
+### 4. Run migrations:
 
     python manage.py migrate
 	
-### 4. Load minimal data:
+### 5. Load minimal data:
 
     python manage.py loaddata dump\dump_min
 
-### 5. Create a user:
+### 6. Create a user:
 
     python manage.py createsuperuser
 
-### 6. Run the server:
+### 7. Run the server:
 
     python manage.py runserver
 
-### 7. And open [127.0.0.1:8000](http://127.0.0.1:8000) in your web browser.
+### 8. And open [127.0.0.1:8000](http://127.0.0.1:8000) in your web browser.
 
 ## License
 
